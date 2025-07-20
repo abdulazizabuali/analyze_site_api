@@ -7,7 +7,6 @@ app = FastAPI(title="Recon API")
 
 def clean_url(url: str) -> str:
     url = url.strip()
-    # تصحيح حالة https// بدلاً من https://
     if url.startswith('https//'):
         url = url.replace('https//', 'https://', 1)
     parsed = urlparse(url)
