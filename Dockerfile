@@ -19,8 +19,6 @@ COPY ./app ./app
 # فتح البورت 80 داخل الحاوية
 EXPOSE 80
 
-# ❗️تشغيل Uvicorn بصلاحيات root لتجاوز مشكلة البورت 80
 USER root
 
-# تشغيل التطبيق على المنفذ 80 كما تفرض غيمة
 CMD ["uvicorn", "app.apiforanalyzesite:app", "--host", "0.0.0.0", "--port", "80"]
